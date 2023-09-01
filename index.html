@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEMPERATURE CONVERTER</title>
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Nunito:ital,wght@0,200;0,400;0,700;1,600&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
+        body {
+            padding: 50px, 100px;
+            background-image: url('https://play-lh.googleusercontent.com/Vn9sIUPcCVihrxMATWR_MjCIFuc5quCw-R3UN8Rmoze7rgaBhHdmF2RqjX3x28EJoQ=w600-h300-pc0xffffff-pd');
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(157, 43, 42);
+            text-shadow: 58px;
+            text-transform: capitalize;
+            text-decoration: underline;
+        }
+
+        #container {
+            text-align: center;
+            background-color: transparent;
+            padding: 50px;
+            box-shadow: inset;
+            border-radius: 30px;
+        }
+
+        .input-div {
+            display: inline-block;
+        }
+
+        .input {
+            margin: 15px;
+            padding: 5px, 10px;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            width: 250px;
+            text-align: center;
+            border-radius: 60px;
+        }
+
+        label {
+            font-size: 45px;
+            color: rgb(113, 25, 25);
+            border-radius: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>TEMPERATURE CONVERTER</h1>
+    <div id="container">
+        <div class="input-div">
+            <label>Celsius</label><br>
+            <input type="number" value="0" id="celsius" class="input">
+        </div>
+        <div class="input-div">
+            <label>Fahrenhite</label><br>
+            <input type="number" value="32" id="fahrenhite" class="input">
+        </div>
+    </div>
+    <script>
+        var fh = document.getElementById("fahrenhite");
+        var cel = document.getElementById("celsius");
+
+        celsius.addEventListener('input', function () {
+            let c = this.value;
+            let f = (c * 9 / 5) + 32;
+            if (!Number.isInteger(f)) {
+                f = f.toFixed(3);
+            }
+            fh.value = f;
+        });
+        fahrenhite.addEventListener('input', function () {
+            let f = this.value;
+            let c = (f - 32) * 5 / 9;
+            if (!Number.isInteger(c)) {
+                c = c.toFixed(3);
+            }
+            cel.value = c;
+        });
+    </script>
+</body>
+
+</html>
